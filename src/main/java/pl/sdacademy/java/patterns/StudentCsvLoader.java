@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Supplier;
 
 class StudentCsvLoader {
@@ -29,6 +30,15 @@ class StudentCsvLoader {
     }
 
     private Student parseLine(String[] fields) {
-        throw new UnsupportedOperationException();
+        Student.builder()
+                .groupCode(fields[3])
+                .person(Person.builder()
+                        .uuid(UUID.fromString(fields[0]))
+                        .firstName(fields[2])
+                        .lastName(fields[1])
+                        .build()
+                )
+                .build();
+
     }
 }

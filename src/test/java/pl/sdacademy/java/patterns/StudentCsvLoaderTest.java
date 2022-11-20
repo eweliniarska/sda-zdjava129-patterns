@@ -18,6 +18,8 @@ class StudentCsvLoaderTest {
 
         // then
         assertThat(students).hasSize(2);
+        assertThat(students.get(0).getGroupCode()).isEqualTo("4A");
+        assertThat(students).
 
     }
 
