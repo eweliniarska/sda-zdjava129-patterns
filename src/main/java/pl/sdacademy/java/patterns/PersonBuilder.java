@@ -3,7 +3,7 @@ package pl.sdacademy.java.patterns;
 import java.util.UUID;
 
 public class PersonBuilder {
-    private UUID uuid;
+    private UUID uuid = UUID.randomUUID();
     private String firstName;
     private String lastName;
 
@@ -23,6 +23,6 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person();
+        return new Person(uuid, firstName, lastName);
     }
 }
