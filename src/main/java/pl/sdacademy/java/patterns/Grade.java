@@ -10,6 +10,10 @@ public class Grade {
     private BigDecimal value;
     private LocalDateTime issueDateTime;
 
+    public static GradeBuilder builder() {
+        return new GradeBuilder();
+    }
+
     public Grade(UUID courseUuid, GradeType gradeType, BigDecimal value, LocalDateTime issueDateTime) {
         this.courseUuid = courseUuid;
         this.gradeType = gradeType;
